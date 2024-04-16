@@ -79,3 +79,11 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
+  build:
+    needs: [analyze]
+    uses: ./.github/workflows/dotnet.yml
+    permissions:
+      contents: read
+      security-events: write
+      packages: read
+      actions: read  
