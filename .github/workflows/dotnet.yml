@@ -28,11 +28,11 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
-  # scan:
-  #   needs: [build]
-  #   uses: ./.github/workflows/sonarcloud-integration.yml
-  #   permissions:
-  #     contents: read
+  scan:
+    needs: [build]
+    uses: ./.github/workflows/codeql.yml
+    permissions:
+      contents: read
   
   
     
