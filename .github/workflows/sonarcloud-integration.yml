@@ -15,9 +15,8 @@ jobs:
     steps:
       - name: Analyze with SonarCloud
         uses: sonarsource/sonarcloud-github-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          # Additional arguments for the sonarcloud scanner
-          args:
+        with:
+          token: ${{ secrets.SONAR_TOKEN }}
+          args: |
             -Dsonar.projectKey=biancapistea_webApi
             -Dsonar.organization=biancapistea
