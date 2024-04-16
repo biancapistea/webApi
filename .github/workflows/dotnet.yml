@@ -33,6 +33,8 @@ jobs:
     uses: ./.github/workflows/codeql.yml
     permissions:
       contents: read
-  
+      security-events: write
+      packages: read
+      actions: read  
   
     
