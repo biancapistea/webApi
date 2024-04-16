@@ -1,16 +1,14 @@
 name: "CodeQL"
 
 on:
-    workflow_call:
-    workflow_dispatch:
-#   push:
-#     branches: [ "main" ]
-#   pull_request:
-#     branches: [ "main" ]
-#   schedule:
-#     - cron: '23 5 * * 1'
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '23 5 * * 1'
 
-jobs:
+jobs:     
   analyze:
     name: Analyze (${{ matrix.language }})
     # Runner size impacts CodeQL analysis time. To learn more, please see:

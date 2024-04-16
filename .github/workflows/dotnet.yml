@@ -1,11 +1,13 @@
 name: integration
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_call:
   workflow_dispatch:
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
+  # workflow_dispatch:
 
 jobs:
   build:
@@ -28,13 +30,4 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
-  scan:
-    needs: [build]
-    uses: ./.github/workflows/codeql.yml
-    permissions:
-      contents: read
-      security-events: write
-      packages: read
-      actions: read  
-  
     
