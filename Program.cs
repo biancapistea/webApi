@@ -4,7 +4,6 @@ var x = 5;
 var ys = 3;
 var fd = 4;
 var d = 4;
-var d = 3;
 
 app.MapGet("/", () => "Hello World!");
 
