@@ -32,4 +32,4 @@ jobs:
       - name: Set up Packer application
         run: |
           packer init .
-          packer build -var 'aws_access_key=${{ secrets.AWS_ACCESS_KEY_ID }}' -var 'aws_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -var 'aws_region=${{ vars.AWS_REGION }}' -var "prerequisites_ami=$(jq -r '.builds[-1].artifact_id' prerequisites_ami.json | cut -d ':' -f 2)" windows-app.json.pkr.hcl
+          packer build -var 'aws_access_key_app=${{ secrets.AWS_ACCESS_KEY_ID }}' -var 'aws_secret_access_key_app=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -var 'aws_region_app=${{ vars.AWS_REGION }}' -var "prerequisites_ami=$(jq -r '.builds[-1].artifact_id' prerequisites_ami.json | cut -d ':' -f 2)" windows-app.json.pkr.hcl
