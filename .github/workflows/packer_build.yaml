@@ -1,0 +1,30 @@
+name: Packer Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build_prerequisites_ami:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Packer prerequisites
+        run: packer build -var 'aws_access_key=${{ secrets.AWS_ACCESS_KEY_ID }}' -var 'aws_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -var 'aws_region=${{ secrets.AWS_REGION }}' windows.json.pkr.hcl
+
+  build_application_ami:
+    needs: build_prerequisites_ami
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Set up Packer application
+        run: packer build -var 'aws_access_key=${{ secrets.AWS_ACCESS_KEY_ID }}' -var 'aws_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -var 'aws_region=${{ secrets.AWS_REGION }}' -var "prerequisites_ami=$(jq -r '.builds[-1].artifact_id' prerequisites_ami.json | cut -d ':' -f 2)" windows-app.json.pkr.hcl
