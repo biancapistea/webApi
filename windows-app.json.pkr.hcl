@@ -7,20 +7,20 @@ packer {
   }
 }
 
-variable "aws_access_key" {
-  type    = string
-  default = ${{ secrets.AWS_ACCESS_KEY_ID }}
-}
+// variable "aws_access_key" {
+//   type    = string
+//   default = ${{ secrets.AWS_ACCESS_KEY_ID }}
+// }
 
-variable "aws_secret_access_key" {
-  type    = string
-  default = ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-}
+// variable "aws_secret_access_key" {
+//   type    = string
+//   default = ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+// }
 
-variable "aws_region" {
-  type    = string
-  default = "${{ vars.AWS_REGION }}"
-}
+// variable "aws_region" {
+//   type    = string
+//   default = "${{ vars.AWS_REGION }}"
+// }
 
 variable "prerequisites_ami" {
   type    = string
