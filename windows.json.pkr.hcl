@@ -9,17 +9,17 @@ packer {
 
 variable "aws_access_key" {
   type    = string
-  default = "${env("AWS_ACCESS_KEY_ID")}"
+  default = ${{ secrets.AWS_ACCESS_KEY_ID }}
 }
 
 variable "aws_secret_access_key" {
   type    = string
-  default = "${env("AWS_SECRET_ACCESS_KEY")}"
+  default = ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 }
 
 variable "aws_region" {
   type    = string
-  default = "${env("AWS_REGION")}"
+  default = "${{ vars.AWS_REGION }}"
 }
 
 # "timestamp" template function replacement
