@@ -320,7 +320,8 @@ See the VPC:
 <img width="1512" alt="Screenshot 2024-04-18 at 19 44 04" src="https://github.com/biancapistea/webApi/assets/56589178/f17a5006-9d1d-4294-a74a-34764c7665fb">
 
 
-**Teoretically thinking how to implement blue-green strategy:**
+#### Teoretically thinking how to implement blue-green strategy: ####
+
 Terraform is used to define the infrastructure resources required for both the blue and green environments. This includes VPC, subnets, security groups, load balancer, target groups, and EC2 instances. The infrastructure is defined in a declarative manner, allowing for consistent and reproducible deployments.
 
  **For Blue Environment Setup**:
