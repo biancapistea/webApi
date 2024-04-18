@@ -1,4 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(80); // Listen on any IP address on the specified port
+});
 var app = builder.Build();
 var x = 5;
 var ys = 3;

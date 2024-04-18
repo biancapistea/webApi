@@ -23,3 +23,6 @@
 /Users/biancapistea/Documents/projects/webApi/obj/Debug/net8.0/webApi.pdb
 /Users/biancapistea/Documents/projects/webApi/obj/Debug/net8.0/webApi.genruntimeconfig.cache
 /Users/biancapistea/Documents/projects/webApi/obj/Debug/net8.0/ref/webApi.dll
+/Users/biancapistea/Documents/projects/webApi/bin/Debug/net8.0/prerequisites_ami.json
+/Users/biancapistea/Documents/projects/webApi/bin/Debug/net8.0/windows.json
+/Users/biancapistea/Documents/projects/webApi/obj/Debug/net8.0/webApi.sourcelink.json
