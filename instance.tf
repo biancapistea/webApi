@@ -1,5 +1,5 @@
 resource "aws_instance" "ec2" {
-  ami                    = "ami-07efe17daa3818b21"
+  ami                    = "ami-073ea556c08142b39"
   instance_type          = "t2.micro"
   key_name               = "ami"
   vpc_security_group_ids = [aws_security_group.sgforinstance.id]
@@ -10,7 +10,7 @@ resource "aws_instance" "ec2" {
 }
 
 resource "aws_instance" "ec21" {
-  ami                    = "ami-07efe17daa3818b21"
+  ami                    = "ami-073ea556c08142b39"
   instance_type          = "t2.micro"
   key_name               = "ami"
   vpc_security_group_ids = [aws_security_group.sgforinstance.id]
